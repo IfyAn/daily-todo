@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
+import Signup from './components/Signup'
 
 
 class App extends Component {
   render() { 
     return (
-      <h1>hello</h1>
+      <>
+      <h1>Daily Tasks</h1>
+      <Signup />
+      </>
     );
   }
 }
