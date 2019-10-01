@@ -1,0 +1,42 @@
+.container {
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+    background: url('/img/sky.jpg') no-repeat;;
+    
+    /* background-color: green */
+  }
+
+.text{
+  font-size: 2rem;
+  width: 2rem;
+  color: #10eb7d;
+}
+
+form{
+  width: 100vw;
+  height: 70vh;
+  padding:90px 50px ;
+  margin: 3rem 0;
+  background-color: #125ef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #61dafb; 
+}
+  
+label{
+  text-decoration: 10px;
+}
+  .btn{
+    font-size: bold;
+    font-weight: bold;
+    color: blue;
+    border-color: #f3f3f3;
+    cursor: progress;
+  }
+
+  .btn:focus{
+    color: #f9f9f9;
+  }
