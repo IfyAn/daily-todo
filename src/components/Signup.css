@@ -1,5 +1,5 @@
 .container {
-    margin: 0;
+    margin: 3rem;
     padding: 0;
     font-family:  sans-serif;
     background: url('/img/sky.jpg') no-repeat;;
@@ -14,11 +14,11 @@
 }
 
 form{
-  width: 100vw;
-  height: 70vh;
-  padding:90px 50px ;
-  margin: 3rem 0;
+  padding: 10rem 50px ;
+  margin: 3rem 0 0 0;
   background-color: #125ef8;
+  position: bottom;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,12 +29,16 @@ form{
 label{
   text-decoration: 10px;
 }
-  .btn{
-    font-size: bold;
-    font-weight: bold;
-    color: blue;
-    border-color: #f3f3f3;
-    cursor: progress;
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: pink;
+    background: #61dafb; 
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 3px solid #0a0a0a
   }
 
   .btn:focus{

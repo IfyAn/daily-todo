@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import Signup from './components/Signup'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Navbar from './components/nav/Navbar'
 import Dashboard from './components/dashboard/Dashboard';
+import SignUp from './components/SignUp'
+import SignIn from './components/SignIn';
+import Footer from './Footer';
 
 
 class App extends Component {
   render() { 
     return (
-      <>
-      <Dashboard />
-      <Signup />
-      </>
+      <BrowserRouter>
+          <Navbar />
+            <Switch>
+            <Route exact path='/' component={Dashboard} />
+              <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            </Switch>
+          <Footer />
+      </BrowserRouter>
     );
   }
 }

@@ -1,0 +1,22 @@
+.navbar{
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.424);
+    z-index: 1;
+  }
+
+  .nav-link{
+    word-spacing: 2px;
+    padding: 0.75rem 2rem;
+  }
+
+  NavLink{
+      display: flex;
+      flex-flow: row;
+      word-spacing: 5rem;
+      font: 2rem;
+      font-weight: bold;
+      
+  }
