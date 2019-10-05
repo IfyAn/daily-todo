@@ -7,9 +7,9 @@ import SignOutLinks from './SignOutLinks'
 
 const Navbar=()=> {
     return (
-        <nav className="navbar">
+        <nav className="navbar mx-auto">
             <div className="container">
-                <Link to='/' className="nav">MyPlan</Link>
+                <Link to='/' className="nav ">MyPlan</Link>
                 <SignInLinks />
                 <SignOutLinks />
             </div>

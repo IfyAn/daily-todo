@@ -16,21 +16,19 @@ class SignIn extends Component {
     }
     render() {
         return (
-            <div className='container'>
+            <div className='container-block'>
                 <form onSubmit={this.handleSubmit} className='white'>
                     <h5 className="text">Sign In</h5>
                     <div className="input-field">
-                        <label htmlFor="email">Email : </label>
-                        <input type="email" id="email" onChange={this.handleChange}/>
+                        <input type="email" id="email" placeholder='Email' className='input-line' onChange={this.handleChange}/>
                     </div>
                     <br/>
                     <div className="input-field">
-                        <label htmlFor="password">Password : </label>
-                        <input type="password" id="password" onChange={this.handleChange}/>
+                        <input type="password" placeholder='Password' id="password"className='input-line'  onChange={this.handleChange}/>
                     </div>
                     <br/>
                     <div className="input-field">
-                        <button className="btn ">Log Out</button>
+                        <button className="btn">Log Out</button>
                     </div>
                 </form>
             </div>

@@ -1,38 +1,57 @@
-.container {
-    margin: 3rem;
-    padding: 0;
-    font-family:  sans-serif;
-    background: url('/img/sky.jpg') no-repeat;;
-    
-    /* background-color: green */
+  .container-block{
+    position: relative;
+    left:35%;
+    display: flex;
+    flex-direction: column;
+    padding:30px 0;
+    width:500px;
+    height:70%;
+    z-index:1;
   }
 
 .text{
-  font-size: 2rem;
-  width: 2rem;
-  color: #10eb7d;
+  padding:40px;
+  font-weight:lighter;
+  text-transform:uppercase;
+  color:#414141;
 }
 
-form{
+.white{
+  background: linear-gradient(#8CA6DB, #B993D6);
   padding: 10rem 50px ;
   margin: 3rem 0 0 0;
-  background-color: #125ef8;
   position: bottom;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #61dafb; 
+color: #61dafb; 
 }
-  
-label{
-  text-decoration: 10px;
+.input-line {
+  background: none;
+  margin-bottom: 10px;
+  line-height: 2.4em;
+  color: rgb(15, 1, 1);
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  transition: all .2s ease;
 }
+input {
+  border: none;
+}
+.input-field:focus {
+  border: none;
+  transition: all .2s ease;
+}
+
 .btn{
     display: inline-block;
-    text-decoration: none;
+    border-radius: .15rem;
+    width: 150px;
     letter-spacing: 2px;
+    margin: 30px auto;
     color: pink;
     background: #61dafb; 
     padding: 0.4rem 0.9rem;
@@ -42,5 +61,8 @@ label{
   }
 
   .btn:focus{
-    color: #f9f9f9;
-  }
+    color: #ee0c0c;
+    transition: color .2s ease;
+  }  
+
+

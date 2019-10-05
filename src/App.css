@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+    background: url('/img/universe.jpg') ;
+}
+
+.project-summary{
+    width: 350px;
+    height: 150px;
+    background-color: rgb(43, 21, 241);
+    background: linear-gradient(#c70505, #fff);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+}
