@@ -1,53 +1,78 @@
-import React, { Component } from 'react'
-//import './SignUp.css'
+import React, { Component } from 'react';
+import serializeForm from 'form-serialize';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
+class Signup extends Component{
 
-class SignUp extends Component {
-    state={
-        email: '',
-        password: '',
-        firstName:'',
-        lastName: ''
+    handleSignup = (e) => {
+        e.preventDefault();
+        const values = serializeForm(e.target, {hash: true});
+        this.props.handleParentStateChange('signupLoading', true)
+
+        if(values){
+            const url = 'https://daily-todo-api.herokuapp.com/api/v1/users';
+            axios.post(url, values)
+            .then(result => {
+                if(result.data.status === 'success'){
+                    this.props.history.push('/');
+
+                }else{
+                    this.props.handleParentStateChange('signupLoading', false);
+                    this.props.handleParentStateChange('signupLoadingErr', true) 
+                }
+
+            })
+            .catch( e => {
+                console.log(e)
+                this.props.handleParentStateChange('signupLoading', false);
+                this.props.handleParentStateChange('signupLoadingErr', true) 
+            })
+        }
+
     }
-    handleChange=e=>{
-        this.setState({
-            [e.target.id] : e.target.value
-        })
-    }
-    handleSubmit=(e)=>{
-        e.preventDefault()
-    }
-    render() {
+
+    render(){
         return (
-            <div className='container-block'>
-                <form onSubmit={this.handleSubmit} className='white'>
-                    <h5 className="text">Sign Up</h5>
-                    <br />
-                    <div className="input-field">
-                        <input type="email" id="email" placeholder='Email' onChange={this.handleChange} className='input-line' />
-                    </div>
-                    <br />
-                    <div className="input-field">
-                        <input type="password" id="password" placeholder='Password' onChange={this.handleChange} className='input-line' />
-                    </div>
-                    <br />
-                    <div className="input-field">
-                        <input type="text" id="firstName"placeholder='First Name'  hintText='Enter Your First Name' onChange={this.handleChange} className='input-line' />
-                    </div>
-                    <br />
-                    <div className="input-field">
-                        <input type="text" id="lastName" placeholder='Last Name' hintText='Enter Your Last Name' onChange={this.handleChange} className='input-line' />
-                    </div>
-                    <br />
-                    <div className="input-field">
-                        <button className="btn">Sign Up</button>
-                    </div>
-                </form>
+            <div onSubmit={(e) => this.handleSignup(e)} className='signup'>
+                <div className='signup-navigation'>
+                    <span>MarioPlan</span>
+                    <Link to='/signup'>Signup</Link>
+                    <Link to='/'>Login</Link>
+                </div>
+                <form className='signup-form'>
+                    <input
+                        type='email'
+                        name='email'
+                        placeholder='Email'
+                        required
+                    />
+                    <input
+                        type='password'
+                        name='password'
+                        placeholder='Password'
+                        required
+                    />
+                    <input
+                        type='text'
+                        name='firstName'
+                        placeholder='First Name'
+                        required
+                    />
 
-                
+                    <input
+                        type='text'
+                        name='lastName'
+                        placeholder='Last Name'
+                        required
+                    />
+                    <button>SIGN UP</button>
+                </form>
+                {this.props.signupLoading ? <p> Loading, please wait</p> : null}
+                {this.props.signupLoadingErr ? <p> wrong email or password combination or check your network</p> : null}
             </div>
-        )
+        );
     }
 }
 
-export default SignUp
+export default Signup;
