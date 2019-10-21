@@ -20,6 +20,7 @@ class App extends Component {
   }
 
   handleParentStateChange = (property, value) =>{
+    // change parent state
     this.setState({[property]: value});
   }
 
